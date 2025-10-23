@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for Flask application testing.
+ths is Pytest configuration and fixtures for Flask application testing.
 """
 import pytest
 import tempfile
