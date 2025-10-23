@@ -11,7 +11,7 @@ import os
 # Add the parent directory to the path so we can import app and DAL
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from app import app as flask_app
+from app import create_app
 from DAL import init_db, get_all_projects, insert_project
 
 
@@ -24,16 +24,14 @@ def app():
     # Set environment variable for database path
     os.environ['DATABASE_PATH'] = db_path
     
-    # Configure the app for testing
-    flask_app.config.update({
+    # Create a new app instance with the test database
+    test_app = create_app()
+    test_app.config.update({
         'TESTING': True,
         'DATABASE': db_path
     })
     
-    # Initialize the database
-    init_db(db_path)
-    
-    yield flask_app
+    yield test_app
     
     # Clean up
     os.close(db_fd)

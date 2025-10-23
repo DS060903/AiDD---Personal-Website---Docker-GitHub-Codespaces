@@ -6,59 +6,65 @@ from DAL import init_db, get_all_projects, insert_project
 import os
 
 
-app = Flask(__name__)
-
-# Get database path from config or use default
-db_path = os.environ.get('DATABASE_PATH', 'projects.db')
-
-# Initialize database on startup
-init_db(db_path)
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-
-@app.route("/resume")
-def resume():
-    return render_template("resume.html")
-
-
-@app.route("/projects")
-def projects():
-    projects = get_all_projects(db_path)
-    return render_template("projects.html", projects=projects)
-
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
-
-@app.route("/thankyou")
-def thankyou():
-    # The contact form uses GET. You can access query params via request.args if needed.
-    return render_template("thankyou.html")
-
-
-@app.route("/add", methods=["GET", "POST"])
-def add_project():
-    if request.method == "POST":
-        title = request.form.get("title")
-        description = request.form.get("description")
-        image_file_name = request.form.get("image_file_name")
-        
-        if title and description and image_file_name:
-            insert_project(title, description, image_file_name, db_path)
-            return redirect(url_for("projects"))
+def create_app():
+    """Application factory pattern for better testing support."""
+    app = Flask(__name__)
     
-    return render_template("add.html")
+    # Get database path from config or use default
+    db_path = os.environ.get('DATABASE_PATH', 'projects.db')
+    
+    # Initialize database
+    init_db(db_path)
+    
+    # Store db_path in app config for use in routes
+    app.config['DATABASE_PATH'] = db_path
+    
+    @app.route("/")
+    def index():
+        return render_template("index.html")
+
+    @app.route("/about")
+    def about():
+        return render_template("about.html")
+
+    @app.route("/resume")
+    def resume():
+        return render_template("resume.html")
+
+    @app.route("/projects")
+    def projects():
+        db_path = app.config['DATABASE_PATH']
+        projects = get_all_projects(db_path)
+        return render_template("projects.html", projects=projects)
+
+    @app.route("/contact")
+    def contact():
+        return render_template("contact.html")
+
+    @app.route("/thankyou")
+    def thankyou():
+        # The contact form uses GET. You can access query params via request.args if needed.
+        return render_template("thankyou.html")
+
+    @app.route("/add", methods=["GET", "POST"])
+    def add_project():
+        if request.method == "POST":
+            title = request.form.get("title")
+            description = request.form.get("description")
+            image_file_name = request.form.get("image_file_name")
+            
+            if title and description and image_file_name:
+                db_path = app.config['DATABASE_PATH']
+                insert_project(title, description, image_file_name, db_path)
+                return redirect(url_for("projects"))
+        
+        return render_template("add.html")
+    
+    return app
+
+
+# Create the app instance
+app = create_app()
 
 
 if __name__ == "__main__":
