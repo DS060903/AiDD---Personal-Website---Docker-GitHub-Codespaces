@@ -3,12 +3,16 @@
 
 from flask import Flask, render_template, request, redirect, url_for
 from DAL import init_db, get_all_projects, insert_project
+import os
 
 
 app = Flask(__name__)
 
+# Get database path from config or use default
+db_path = os.environ.get('DATABASE_PATH', 'projects.db')
+
 # Initialize database on startup
-init_db()
+init_db(db_path)
 
 
 @app.route("/")
@@ -28,7 +32,7 @@ def resume():
 
 @app.route("/projects")
 def projects():
-    projects = get_all_projects()
+    projects = get_all_projects(db_path)
     return render_template("projects.html", projects=projects)
 
 
@@ -51,7 +55,7 @@ def add_project():
         image_file_name = request.form.get("image_file_name")
         
         if title and description and image_file_name:
-            insert_project(title, description, image_file_name)
+            insert_project(title, description, image_file_name, db_path)
             return redirect(url_for("projects"))
     
     return render_template("add.html")
