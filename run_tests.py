@@ -23,7 +23,6 @@ def run_tests():
             sys.executable, '-m', 'pytest', 
             'tests/', 
             '--cov=app', 
-            '--cov=DAL', 
             '--cov-report=html', 
             '--cov-report=term-missing',
             '-v'

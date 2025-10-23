@@ -1,10 +1,9 @@
 """
-ths is Pytest configuration and fixtures for Flask application testing.
+Pytest configuration and fixtures for Flask application testing.
 """
 import pytest
 import tempfile
 import os
-import sqlite3
 from flask import Flask
 import sys
 import os
