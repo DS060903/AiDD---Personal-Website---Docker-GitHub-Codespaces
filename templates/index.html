@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewang Sethi - Personal Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Dewang Sethi</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Welcome to My Digital Space</h2>
+                    <p class="hero-subtitle">Product & Technology Strategist | MSIS Student at Kelley</p>
+                    <p class="hero-description">
+                        I'm a results-driven product and technology strategist passionate about bridging business insight with intelligent systems. 
+                        Currently pursuing my Master of Science in Information Systems at Indiana University's Kelley School of Business, 
+                        I combine finance, data analytics, and enterprise technology to drive digital transformation.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More</a>
+                        <a href="{{ url_for('projects') }}" class="btn btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='images/Headshot.jpg') }}" alt="Dewang Sethi headshot" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>3.78</h3>
+                        <p>GPA at Kelley</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$1.2M</h3>
+                        <p>Saved per Quarter</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>25%</h3>
+                        <p>Reporting Accuracy Boost</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5K+</h3>
+                        <p>Regulatory pages parsed and analyzed by my systems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-content">
+            <div class="container">
+                <h2>What I Do</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Business Intelligence</h3>
+                        <p>Leveraging SQL, Tableau, and S/4HANA to transform complex data into actionable business insights and strategic recommendations.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>AI & Automation</h3>
+                        <p>Building intelligent systems using RAG frameworks and machine learning to streamline compliance and decision-making processes.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Enterprise Architecture</h3>
+                        <p>Designing scalable solutions and mapping complex business processes using BPMN, ArchiMate, and UML methodologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dewang Sethi</h3>
+                    <p>Product & Technology Strategist bridging business insight with intelligent systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:dewaseth@iu.edu">📧</a>
+                        <a href="https://www.linkedin.com/in/ksbdewang-sethi/">💼</a>
+                        <a href="tel:+18127786822">📞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dewang Sethi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

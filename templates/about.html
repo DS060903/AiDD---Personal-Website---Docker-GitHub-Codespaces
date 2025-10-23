@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Dewang Sethi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Top author bar: name above, repo link below -->
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Dewang Sethi</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>About Me</h1>
+                <p class="page-subtitle">Get to know the person behind the code</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>My Story</h2>
+                        <p>
+                            Hello! I’m Dewang Sethi, a results-driven product and technology strategist passionate about bridging business
+                            insight with intelligent systems. I grew up in Mumbai, India, where my journey began in finance—a field that
+                            taught me the importance of structure, precision, and analytical thinking. Over time, I became fascinated by how
+                            technology could transform these same business processes, sparking my shift toward data, automation, and intelligent
+                            systems.
+                        </p>
+                        <p>
+                            I’m currently pursuing my Master of Science in Information Systems at Indiana University’s Kelley School of Business,
+                            where I combine my foundation in finance, data analytics, and enterprise technology to design solutions that drive
+                            digital transformation and efficiency across industries.
+                        </p>
+                        <p>
+                            My experience spans ERP modernization, AI-driven compliance tools, and enterprise architecture projects. As a Product
+                            Analyst Intern at Kiewit Corporation, I supported the firm’s SAP S/4HANA upgrade by mapping financial and operational
+                            data flows and automating reporting processes. Before that, I worked on Project RECAP—an AI-powered regulatory
+                            compliance assistant for architecture firms—where I applied design thinking and retrieval-augmented generation (RAG)
+                            frameworks to simplify complex building regulations and enhance decision-making.
+                        </p>
+                        <p>
+                            Grounded in a cross-disciplinary mindset, I’m deeply passionate about integrating strategy, analytics, and
+                            human-centered design to build scalable, data-driven products. Outside of work, I’m known for my structured approach
+                            to learning, my commitment to mentorship, and my drive to turn complex technical ideas into clear, actionable outcomes
+                            that make a real impact.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <div class="about-images">
+                            <img src="{{ url_for('static', filename='images/WhatsApp Image 2025-10-05 at 11.58.05 AM.jpeg') }}" alt="Dewang Sethi with family at Kelley" class="about-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interests">
+            <div class="container">
+                <h2>My Interests & Hobbies</h2>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">🎸</div>
+                        <h3>Music</h3>
+                        <p>Playing acoustic guitar and ukulele, exploring different musical genres and techniques in my free time.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">♟️</div>
+                        <h3>Chess</h3>
+                        <p>Enjoying rapid chess games and strategic thinking, applying analytical skills to improve my game.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">🏏</div>
+                        <h3>Cricket</h3>
+                        <p>Following cricket matches and understanding the strategic aspects of the game, both as a sport and business.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">💪</div>
+                        <h3>Strength Training</h3>
+                        <p>Maintaining physical fitness through structured strength training and maintaining a healthy lifestyle.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">🍳</div>
+                        <h3>Culinary Arts</h3>
+                        <p>Exploring different cuisines and cooking techniques, combining creativity with precision in the kitchen.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">🌍</div>
+                        <h3>Geopolitics</h3>
+                        <p>Following global affairs and understanding the intersection of politics, economics, and international relations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="container">
+                <h2>My Values & Philosophy</h2>
+                <div class="values-content">
+                    <div class="value-item">
+                        <h3>Continuous Learning</h3>
+                        <p>I believe that technology evolves rapidly, and staying current requires a commitment to lifelong learning. I regularly invest time in learning new technologies and improving existing skills.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>User-Centered Design</h3>
+                        <p>Every project I work on is guided by the principle that technology should serve people. I focus on creating intuitive, accessible, and meaningful user experiences.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Collaboration</h3>
+                        <p>Great software is built by great teams. I value open communication, constructive feedback, and working together to achieve common goals.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Quality & Craftsmanship</h3>
+                        <p>I take pride in writing clean, maintainable code and delivering solutions that not only meet requirements but exceed expectations in terms of performance and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>I'm always interested in new opportunities and meaningful conversations about technology and innovation.</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dewang Sethi</h3>
+                    <p>Product & Technology Strategist bridging business insight with intelligent systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:dewaseth@iu.edu">📧</a>
+                        <a href="https://www.linkedin.com/in/ksbdewang-sethi/">💼</a>
+                        <a href="tel:+18127786822">📞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dewang Sethi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

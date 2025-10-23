@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project - Dewang Sethi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Dewang Sethi</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Add New Project</h1>
+                <p class="page-subtitle">Share your latest work and achievements</p>
+            </div>
+        </section>
+
+        <section class="form-content">
+            <div class="container">
+                <div class="form-container">
+                    <form method="POST" action="{{ url_for('add_project') }}" class="project-form">
+                        <div class="form-group">
+                            <label for="title">Project Title *</label>
+                            <input type="text" id="title" name="title" required placeholder="Enter project title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description *</label>
+                            <textarea id="description" name="description" required placeholder="Describe your project, technologies used, and key features"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image_file_name">Image File Name *</label>
+                            <input type="text" id="image_file_name" name="image_file_name" required placeholder="e.g., myproject.png">
+                            <small class="form-help">Note: You must manually place the image file in the /static/images folder (drag and drop).</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Add Project</button>
+                            <a href="{{ url_for('projects') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dewang Sethi</h3>
+                    <p>Product & Technology Strategist bridging business insight with intelligent systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:dewaseth@iu.edu">📧</a>
+                        <a href="https://www.linkedin.com/in/ksbdewang-sethi/">💼</a>
+                        <a href="tel:+18127786822">📞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dewang Sethi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

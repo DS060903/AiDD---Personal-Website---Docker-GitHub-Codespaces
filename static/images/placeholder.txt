@@ -1,0 +1,23 @@
+# Image Placeholders
+
+This directory should contain the following images for the website:
+
+## Required Images:
+- profile.jpg - Main profile photo for homepage hero section
+- about-photo.jpg - Photo for about page
+- project1.jpg - E-commerce Platform project screenshot
+- project2.jpg - Task Management App project screenshot  
+- project3.jpg - Weather App project screenshot
+- project4.jpg - Blog Platform project screenshot
+- project5.jpg - Portfolio Website project screenshot
+- project6.jpg - Fitness Tracker project screenshot
+
+## Image Specifications:
+- Format: JPG or PNG
+- Size: Minimum 800x600px for project images
+- Profile photos: Square aspect ratio (1:1) recommended
+- File size: Keep under 500KB for web optimization
+
+## Note:
+Replace these placeholder references with actual images when available.
+For now, the website will display broken image icons until real images are added.

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Dewang Sethi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Dewang Sethi</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('resume') }}" class="active">Resume</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Resume</h1>
+                <p class="page-subtitle">Professional experience and qualifications</p>
+                
+            </div>
+        </section>
+
+        <section class="resume-content">
+            <div class="container">
+                <div class="resume-grid">
+                    <div class="resume-sidebar">
+                        <div class="contact-info">
+                            <h3>Contact Information</h3>
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <a href="mailto:dewaseth@iu.edu">dewaseth@iu.edu</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Phone:</strong>
+                                <a href="tel:+18127786822">(812) 778-6822</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Location:</strong>
+                                <span>Bloomington, IN</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>LinkedIn:</strong>
+                                <a href="https://www.linkedin.com/in/ksbdewang-sethi/" target="_blank">linkedin.com/in/ksbdewang-sethi/</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>University:</strong>
+                                <span>Indiana University, Kelley School of Business</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-section">
+                            <h3>Technical Skills</h3>
+                            <div class="skill-category">
+                                <h4>Programming Languages</h4>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>R</li>
+                                    <li>C#</li>
+                                    <li>HTML/CSS</li>
+                                    <li>ABAP</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Business Intelligence</h4>
+                                <ul>
+                                    <li>SQL</li>
+                                    <li>MS Excel</li>
+                                    <li>Tableau</li>
+                                    <li>Salesforce Lightning</li>
+                                    <li>S/4HANA</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Financial Analysis</h4>
+                                <ul>
+                                    <li>Financial modeling</li>
+                                    <li>Cap table analysis</li>
+                                    <li>Valuation analysis</li>
+                                    <li>Budgeting and forecasting</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Technical Diagramming</h4>
+                                <ul>
+                                    <li>BPMN 2.0</li>
+                                    <li>ArchiMate</li>
+                                    <li>ERD</li>
+                                    <li>UML</li>
+                                    <li>Class Diagrams</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="certifications">
+                            <h3>Achievements</h3>
+                            <div class="cert-item">
+                                <h4>Highest Merit Scholarship</h4>
+                                <p>Kelley School of Business</p>
+                                <span class="cert-date">2024</span>
+                            </div>
+                            <div class="cert-item">
+                                <h4>MSIS Student Ambassador</h4>
+                                <p>Official Program Representative</p>
+                                <span class="cert-date">2024</span>
+                            </div>
+                            <div class="cert-item">
+                                <h4>AFP Corporate FP&A Workshop</h4>
+                                <p>Selected from competitive pool</p>
+                                <span class="cert-date">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-main">
+                        <div class="experience-section">
+                            <h2>Professional Experience</h2>
+                            
+                            <div class="experience-item">
+                                <div class="exp-header">
+                                    <h3>Technology Group Intern – Financial Product Analyst</h3>
+                                    <span class="company">Kiewit Corporation</span>
+                                    <span class="duration">June 2025 – August 2025</span>
+                                </div>
+                                <ul>
+                                    <li>Designed 20+ Visio-based BPMN and data lineage diagrams mapping SAP ECC to S/4HANA migration workflows, transforming complex technical processes into clear, client-facing documentation that accelerated system modernization adoption</li>
+                                    <li>Collaborated with vendors and cross-functional teams to align functional design with system behavior, while conducting load testing to validate peak performance and boost downstream reporting accuracy by ~25%</li>
+                                    <li>Developed SQL and ABAP scripts to validate multi-level reporting logic, ensuring financial metric consistency across operational, regional, and executive dashboards during the SAP migration</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="exp-header">
+                                    <h3>Treasury Analyst Intern</h3>
+                                    <span class="company">Elanco Animal Health</span>
+                                    <span class="duration">May 2024 – August 2024</span>
+                                </div>
+                                <ul>
+                                    <li>Analyzed Q1 2024 SAP S/4HANA invoice records to evaluate the impact of 18 payment terms across all customers, enabling data-driven recommendations that saved ~$1.2 million per quarter in time value gains and improved cash conversion cycles</li>
+                                    <li>Partnered with O2C teams to map root causes of late payments, gain deeper insights into customer payment behavior, and align cross-functional stakeholders on strategies to optimize payment terms</li>
+                                    <li>Engaged in forex trading strategies to minimize hedging costs on international payables and receivables, reducing exposure risks</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="education-section">
+                            <h2>Education</h2>
+                            
+                            <div class="education-item">
+                                <div class="edu-header">
+                                    <h3>Master of Science in Information Systems</h3>
+                                    <span class="university">Indiana University, Kelley School of Business</span>
+                                    <span class="duration">May 2026</span>
+                                </div>
+                                <p>GPA: 3.78/4.00</p>
+                                <p>• Awarded highest merit scholarship and graduate assistantship for academic excellence</p>
+                                <p>• MSIS Student Ambassador: Official Representative of the Program</p>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="edu-header">
+                                    <h3>Bachelor of Science in Business</h3>
+                                    <span class="university">Indiana University, Kelley School of Business</span>
+                                    <span class="duration">May 2025</span>
+                                </div>
+                                <p>Majors: Information Systems, Finance</p>
+                                <p>• AFP Corporate Financial Planning and Analysis Workshop: Selected from a highly competitive student pool</p>
+                                <p>• AskRPS Associate: Streamlined housing assignments for over 40,000 students (2 years)</p>
+                            </div>
+                        </div>
+
+                        <div class="projects-section">
+                            <h2>Leadership & Projects</h2>
+                            
+                            <div class="project-item">
+                                <h3>Project RECAP (Regulatory Compliance Assistant for Planning)</h3>
+                                <p>Founded Project RECAP, an AI-powered compliance assistant helping architecture and planning firms navigate complex Indian regulations. Lead a cross-functional team to design model architecture and retrieval pipeline for a RAG + CAG system processing 5,000+ pages of Indian building codes.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">AI/ML</span>
+                                    <span class="tech-tag">RAG Framework</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Compliance</span>
+                                </div>
+                            </div>
+
+                            <div class="project-item">
+                                <h3>Fidelity Mutual Fund Scraper & Sector Analysis</h3>
+                                <p>Built a Python web scraper using BeautifulSoup, regex, and pandas to extract and clean Fidelity mutual fund data. Filtered sector-specific funds and retrieved key financial metrics from Yahoo Finance for detailed comparative analysis.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">BeautifulSoup</span>
+                                    <span class="tech-tag">Pandas</span>
+                                    <span class="tech-tag">Financial Analysis</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <h3>End-to-End SQL Database System for Retail Operations</h3>
+                                <p>Modeled Costco's operations in a relational database using ER diagrams, normalization, and subtype relationships. Created SQL scripts to manage retail transactions and membership data through table creation, joins, and indexing.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">SQL</span>
+                                    <span class="tech-tag">Database Design</span>
+                                    <span class="tech-tag">ER Diagrams</span>
+                                    <span class="tech-tag">Normalization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="achievements-section">
+                            <h2>Leadership Experience</h2>
+                            <ul>
+                                <li><strong>Phi Eta Sigma Honors Society Executive Treasurer:</strong> Managed allocation of funds for events and activities, executed 7 planned events increasing participation from 50 to 250 students in 6 months</li>
+                                <li><strong>IU2U Student Leader and Mentor:</strong> Designed 4 pre-arrival orientation programs supporting 170+ incoming international students, collaborated with teams to create comprehensive workshops</li>
+                                <li><strong>AskRPS Associate:</strong> Streamlined housing assignments for over 40,000 students and supported CRM-based service delivery over 2 years</li>
+                                <li><strong>MSIS Student Ambassador:</strong> Official representative of the Information Systems program at Kelley School of Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dewang Sethi</h3>
+                    <p>Product & Technology Strategist bridging business insight with intelligent systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:dewaseth@iu.edu">📧</a>
+                        <a href="https://www.linkedin.com/in/ksbdewang-sethi/">💼</a>
+                        <a href="tel:+18127786822">📞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dewang Sethi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

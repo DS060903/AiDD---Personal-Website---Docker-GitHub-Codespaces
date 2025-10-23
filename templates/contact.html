@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Dewang Sethi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Dewang Sethi</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p class="page-subtitle">Let's discuss your next project or just say hello</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <p>I'm always interested in new opportunities and meaningful conversations about technology and innovation. Feel free to reach out!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:dewaseth@iu.edu">dewaseth@iu.edu</a></p>
+                                    <span>I'll respond within 24 hours</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+18127786822">(812) 778-6822</a></p>
+                                    <span>Available 9 AM - 6 PM EST</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h3>Location</h3>
+                                    <p>Bloomington, IN</p>
+                                    <span>Open to remote work</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">💼</div>
+                                <div class="contact-details">
+                                    <h3>LinkedIn</h3>
+                                    <p><a href="https://www.linkedin.com/in/ksbdewang-sethi/" target="_blank">linkedin.com/in/ksbdewang-sethi/</a></p>
+                                    <span>Connect with me professionally</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-section">
+                            <h3>Follow Me</h3>
+                            <div class="social-links">
+                                <a href="mailto:dewaseth@iu.edu" target="_blank" class="social-link">
+                                    <span>📧</span> Email
+                                </a>
+                                <a href="https://www.linkedin.com/in/ksbdewang-sethi/" target="_blank" class="social-link">
+                                    <span>💼</span> LinkedIn
+                                </a>
+                                <a href="tel:+18127786822" target="_blank" class="social-link">
+                                    <span>📞</span> Phone
+                                </a>
+                                <a href="https://kelley.iu.edu" target="_blank" class="social-link">
+                                    <span>🎓</span> Kelley
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <h2>Send Me a Message</h2>
+                        <form class="contact-form" id="contactForm" action="{{ url_for('thankyou') }}" method="GET">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required minlength="2" pattern="[A-Za-z\s]+" title="First name must contain only letters and spaces">
+                                    <span class="error-message" id="firstNameError"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required minlength="2" pattern="[A-Za-z\s]+" title="Last name must contain only letters and spaces">
+                                    <span class="error-message" id="lastNameError"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password *</label>
+                                <input type="password" id="password" name="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$" title="Password must be at least 8 characters with uppercase, lowercase, and number">
+                                <span class="error-message" id="passwordError"></span>
+                                <div class="password-requirements">
+                                    <small>Password must be at least 8 characters with uppercase, lowercase, and number</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8">
+                                <span class="error-message" id="confirmPasswordError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" pattern="[\+]?[1-9][\d]{0,15}" title="Please enter a valid phone number">
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="project">Project Inquiry</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="freelance">Freelance Work</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="subjectError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required minlength="10" placeholder="Tell me about your project or how I can help..."></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to my newsletter for updates on new projects and tech insights</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                            
+                            <div class="form-status" id="formStatus"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="availability">
+            <div class="container">
+                <h2>Availability</h2>
+                <div class="availability-content">
+                    <div class="availability-item">
+                        <h3>🕒 Response Time</h3>
+                        <p>I typically respond to emails within 24 hours during business days.</p>
+                    </div>
+                    <div class="availability-item">
+                        <h3>💼 Project Availability</h3>
+                        <p>Currently available for new projects starting in January 2024.</p>
+                    </div>
+                    <div class="availability-item">
+                        <h3>🌍 Time Zone</h3>
+                        <p>Based in EST (Eastern Standard Time) but flexible with international clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dewang Sethi</h3>
+                    <p>Product & Technology Strategist bridging business insight with intelligent systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:dewaseth@iu.edu">📧</a>
+                        <a href="https://www.linkedin.com/in/ksbdewang-sethi/">💼</a>
+                        <a href="tel:+18127786822">📞</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dewang Sethi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Contact form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous errors
+            clearErrors();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Validate form
+            if (validateForm(data)) {
+                // Redirect to thank you page
+                window.location.href = "{{ url_for('thankyou') }}";
+            }
+        });
+
+        function validateForm(data) {
+            let isValid = true;
+            
+            // First Name validation
+            if (!data.firstName || data.firstName.trim().length < 2) {
+                showError('firstNameError', 'Please enter your first name (at least 2 characters)');
+                isValid = false;
+            } else if (!/^[A-Za-z\s]+$/.test(data.firstName)) {
+                showError('firstNameError', 'First name must contain only letters and spaces');
+                isValid = false;
+            }
+            
+            // Last Name validation
+            if (!data.lastName || data.lastName.trim().length < 2) {
+                showError('lastNameError', 'Please enter your last name (at least 2 characters)');
+                isValid = false;
+            } else if (!/^[A-Za-z\s]+$/.test(data.lastName)) {
+                showError('lastNameError', 'Last name must contain only letters and spaces');
+                isValid = false;
+            }
+            
+            // Email validation
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+            if (!data.email || !emailRegex.test(data.email)) {
+                showError('emailError', 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Password validation
+            if (!data.password || data.password.length < 8) {
+                showError('passwordError', 'Password must be at least 8 characters long');
+                isValid = false;
+            } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/.test(data.password)) {
+                showError('passwordError', 'Password must contain uppercase, lowercase, and number');
+                isValid = false;
+            }
+            
+            // Confirm Password validation
+            if (!data.confirmPassword || data.confirmPassword.length < 8) {
+                showError('confirmPasswordError', 'Please confirm your password');
+                isValid = false;
+            } else if (data.password !== data.confirmPassword) {
+                showError('confirmPasswordError', 'Passwords do not match');
+                isValid = false;
+            }
+            
+            // Phone validation (optional but if provided, should be valid)
+            if (data.phone && data.phone.trim().length > 0) {
+                const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                if (!phoneRegex.test(data.phone.replace(/[\s\-\(\)]/g, ''))) {
+                    showError('phoneError', 'Please enter a valid phone number');
+                    isValid = false;
+                }
+            }
+            
+            // Subject validation
+            if (!data.subject) {
+                showError('subjectError', 'Please select a subject');
+                isValid = false;
+            }
+            
+            // Message validation
+            if (!data.message || data.message.trim().length < 10) {
+                showError('messageError', 'Please enter a message (at least 10 characters)');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => {
+                element.textContent = '';
+                element.style.display = 'none';
+            });
+            formStatus.innerHTML = '';
+        }
+
+        // Real-time validation
+        const inputs = contactForm.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                const fieldName = this.name;
+                const value = this.value.trim();
+                
+                // Clear previous error for this field
+                const errorElement = document.getElementById(fieldName + 'Error');
+                if (errorElement) {
+                    errorElement.textContent = '';
+                    errorElement.style.display = 'none';
+                }
+                
+                // Validate specific fields
+                if (fieldName === 'firstName' && value) {
+                    if (value.length < 2) {
+                        showError('firstNameError', 'First name must be at least 2 characters');
+                    } else if (!/^[A-Za-z\s]+$/.test(value)) {
+                        showError('firstNameError', 'First name must contain only letters and spaces');
+                    }
+                }
+                
+                if (fieldName === 'lastName' && value) {
+                    if (value.length < 2) {
+                        showError('lastNameError', 'Last name must be at least 2 characters');
+                    } else if (!/^[A-Za-z\s]+$/.test(value)) {
+                        showError('lastNameError', 'Last name must contain only letters and spaces');
+                    }
+                }
+                
+                if (fieldName === 'email' && value) {
+                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+                    if (!emailRegex.test(value)) {
+                        showError('emailError', 'Please enter a valid email address');
+                    }
+                }
+                
+                if (fieldName === 'password' && value) {
+                    if (value.length < 8) {
+                        showError('passwordError', 'Password must be at least 8 characters');
+                    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/.test(value)) {
+                        showError('passwordError', 'Password must contain uppercase, lowercase, and number');
+                    }
+                }
+                
+                if (fieldName === 'confirmPassword' && value) {
+                    const password = document.getElementById('password').value;
+                    if (value !== password) {
+                        showError('confirmPasswordError', 'Passwords do not match');
+                    }
+                }
+                
+                if (fieldName === 'phone' && value) {
+                    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                    if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ''))) {
+                        showError('phoneError', 'Please enter a valid phone number');
+                    }
+                }
+                
+                if (fieldName === 'message' && value && value.length < 10) {
+                    showError('messageError', 'Message must be at least 10 characters');
+                }
+            });
+        });
+        
+        // Password confirmation real-time validation
+        document.getElementById('password').addEventListener('input', function() {
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (confirmPassword.value) {
+                const errorElement = document.getElementById('confirmPasswordError');
+                if (this.value !== confirmPassword.value) {
+                    showError('confirmPasswordError', 'Passwords do not match');
+                } else {
+                    errorElement.textContent = '';
+                    errorElement.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
