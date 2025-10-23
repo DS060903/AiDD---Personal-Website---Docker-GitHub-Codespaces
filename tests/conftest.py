@@ -30,7 +30,22 @@ def app():
     # Initialize the database
     init_db(db_path)
     
+    # Monkey patch the DAL functions to use the test database
+    import DAL
+    original_init_db = DAL.init_db
+    original_get_all_projects = DAL.get_all_projects
+    original_insert_project = DAL.insert_project
+    
+    DAL.init_db = lambda db_path_param="projects.db": init_db(db_path)
+    DAL.get_all_projects = lambda db_path_param="projects.db": get_all_projects(db_path)
+    DAL.insert_project = lambda title, description, image_file_name, db_path_param="projects.db": insert_project(title, description, image_file_name, db_path)
+    
     yield flask_app
+    
+    # Restore original functions
+    DAL.init_db = original_init_db
+    DAL.get_all_projects = original_get_all_projects
+    DAL.insert_project = original_insert_project
     
     # Clean up
     os.close(db_fd)
